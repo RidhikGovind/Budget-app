@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+
+  <title>Bud-Getty UI</title>
+
+  <style>
+    body {
+      padding: 1.5em 0em;
+      background-color: #d7d7d7;
+      background-image: linear-gradient(147deg, #d7d7d7 0%, #353535 74%);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .main-container {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 21em;
+      padding: 0;
+      text-align: center;
+      background-color: #4a4a4a;
+      padding: 0.2em 1.1em 2em 1.1em;
+      border-radius: 30px;
+    }
+
+    .budget-container h2 {
+      color: #020403;
+      font-size: 1.8em;
+      font-weight: 900;
+    }
+
+    .budget-container {
+      background-color: #cecece;
+      padding: 1em 0em;
+      border-radius: 1.8em;
+      margin: 8px 2px;
+    }
+
+    .container input[type='text'] {
+      padding: 11px 30px;
+      text-align: left;
+      border: 0;
+      color: white;
+      background-color: #add8e6;
+      background-color: #0b0a08;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.25s ease all;
+      margin-right: 6px;
+    }
+
+    .container input[type='text']:focus {
+      background-color: #16161d;
+      caret-color: white;
+      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
+      transform: scale(1.1);
+      color: #e8eae6;
+    }
+
+    .container input[type='text']::placeholder {
+      font-size: 1.1em;
+      color: #e8eae6;
+    }
+
+    .add {
+      font-size: 25px;
+      font-weight: 900;
+      /*   background-color: #f5f5f5;
+      background-color: #E6E6FA; */
+      background-color: none;
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      border: none;
+      transition: 0.2s ease all;
+      outline: none;
+      cursor: pointer;
+      position: absolute;
+      right: 6px;
+      top: 2px;
+    }
+
+    .add a {
+      background-color: #e6e6fa;
+    }
+
+    .add:hover {
+      transform: scale(1.15);
+    }
+
+    .form {
+      position: relative;
+    }
+
+    .form-1 {
+      margin-bottom: 2.5em;
+    }
+
+    .form-2 {
+      margin-bottom: 0.7em;
+    }
+
+    .form-3 {
+      margin-bottom: 1em;
+    }
+
+    .middle-container {
+      line-height: 2em;
+      color: #cecece;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .middle-container .bal-side {
+      font-size: 2.5em;
+      font-weight: 900;
+    }
+
+    .middle-container .budget-side {
+      font-size: 2.5em;
+      font-weight: 900;
+    }
+
+    .list-container {
+      /*     border: 1px solid green; */
+      width: 20em;
+      padding: 0.5em;
+    }
+
+    .list {
+      border: 2px solid #1a2228;
+      margin: 0.5em 0;
+      border-radius: 15px;
+      list-style: none;
+      text-align: left;
+      background-color: #cecece;
+      transition: 0.2s ease-out all;
+    }
+
+    .list:hover {
+      transform: scale(1.1);
+    }
+
+    .list ul li {
+      list-style: none;
+      color: #020001;
+      position: relative;
+    }
+
+    .list ul li b {
+      font-weight: 900;
+      font-size: 1.1em;
+    }
+
+    .list ul li span {
+      position: absolute;
+      top: 0;
+      right: 120px;
+      font-size: 1.1em;
+    }
+
+    .list ul li button {
+      position: absolute;
+      top: -2px;
+      right: 10px;
+      padding: 0;
+      font-size: 1.5em;
+      font-weight: 900;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      border: 0.5px solid grey;
+      transition: 0.2s ease all;
+    }
+
+    .list ul li button:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="container">
+      <div class="budget-container">
+        <div class="date"></div>
+        <h2>Bud-Getty</h2>
+
+        <form class="form-1 form" onsubmit="return false">
+
+          <input type="text" class="budget-amt" placeholder="Whats your budget?" />
+          <input type="submit" class="budget-amt-btn add a" value="+" />
+        </form>
+      </div>
+
+      <form class="form-2 form" onsubmit="return false">
+
+        <input type="text" class="expense-name" placeholder="Whats your expense?" />
+        <input type="submit" class="expense-name-btn add" value="+" />
+      </form>
+
+      <form class="form-3 form" onsubmit="return false">
+        <input type="text" class="expense-amt" placeholder="Expense Amount ?" />
+        <input type="submit" class="expense-amt-btn add" value="+" />
+      </form>
+
+      <div class="middle-container">
+        <div class="bal-container">
+          <span>Balance</span>
+          <br />
+          ₹
+          <span class="bal-side">0</span>
+        </div>
+        <div class="bud-container">
+          <span>Budget</span>
+          <br />
+          ₹
+          <span class="budget-side">0</span>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <!-- <div class="list">
+            <ul>
+              <li>
+                <b>water</b>
+                <span>10</span>
+                <button>&times;</button>
+              </li>
+            </ul>
+          </div> -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const date = document.querySelector('.date');
+
+    const budgetAmt = document.querySelector('.budget-amt')
+    const budgetBtn = document.querySelector('.budget-amt-btn')
+
+    const expenseName = document.querySelector('.expense-name')
+    const expenseNameBtn = document.querySelector('.expense-name-btn')
+
+    const expenseAmt = document.querySelector('.expense-amt')
+    const expenseAmtBtn = document.querySelector('.expense-amt-btn')
+
+    const balance = document.querySelector('.middle-container .bal-side')
+    const budget = document.querySelector('.middle-container .budget-side')
+    const listContainer = document.querySelector('.list-container')
+
+    let bal = 1
+    let BAmt = ''
+    let EAmt = ''
+    let EName = ''
+    let update = []
+
+    //displaying the date part
+    let d = new Date();
+
+    date.textContent = `${d.toLocaleDateString('en-US', { month: 'long' })} ${d.toLocaleDateString('en-US', { year: 'numeric' })}`;
+
+
+
+
+    budgetBtn.addEventListener('click', () => {
+      if (budgetAmt.value == '') return
+      BAmt = budgetAmt.value
+      console.log(BAmt)
+
+      budget.textContent = BAmt
+      budgetAmt.value = ''
+      budgetAmt.disabled = true;
+
+
+    })
+
+    expenseNameBtn.addEventListener('click', function () {
+      if (expenseName.value == '') return
+      EName = expenseName.value
+      console.log(EName)
+      expenseName.value = ''
+
+    })
+
+    expenseAmtBtn.addEventListener('click', () => {
+      if (expenseAmt.value == '') return
+      EAmt = expenseAmt.value
+      console.log(EAmt)
+      expenseAmt.value = ''
+
+      balanceCalculation()
+      createList()
+
+      bal = 0
+    })
+
+    let i = 0
+    //calculating the balance amount
+    function balanceCalculation() {
+      if (bal == 1) {
+        while (i < 100) {
+          bal = BAmt - EAmt
+          console.log(bal)
+          update[i] = bal
+          balance.textContent = update[i]
+          i++
+          console.log(update)
+          break
+        }
+      } else if (bal == 0) {
+        while (i < 100) {
+          bal = update[i - 1] - EAmt
+          console.log(bal)
+          update[i] = bal
+          balance.textContent = update[i]
+          i++
+          console.log(update)
+          break
+        }
+      }
+
+
+    }
+    //creating a list item
+
+    function createList() {
+      const list = document.createElement('div')
+      const ul = document.createElement('ul')
+      const li = document.createElement('li')
+      const b = document.createElement('b')
+      const span = document.createElement('span')
+      const delBtn = document.createElement('button')
+
+      b.textContent = EName
+      li.appendChild(b)
+
+      span.textContent = `${'₹' + EAmt}`
+      li.appendChild(span)
+
+      delBtn.innerHTML = '&times'
+      li.appendChild(delBtn)
+
+      ul.appendChild(li)
+
+      delBtn.addEventListener('click', function () {
+        listContainer.removeChild(list)
+
+      })
+
+      list.className = 'list'
+      list.appendChild(ul)
+      listContainer.appendChild(list)
+    }
+  </script>
+</body>
+
+</html>
