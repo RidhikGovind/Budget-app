@@ -11,8 +11,11 @@
   <style>
     body {
       padding: 1.5em 0em;
-      background-color: #d7d7d7;
-      background-image: linear-gradient(147deg, #d7d7d7 0%, #353535 74%);
+      /* background-color: #d7d7d7;
+      background-image: linear-gradient(147deg, #d7d7d7 0%, #353535 74%); */
+      background-color: #b3cdd1;
+      background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
+
       font-family: 'Poppins', sans-serif;
     }
 
@@ -25,7 +28,7 @@
     }
 
     .container {
-      width: 21em;
+      width: 21rem;
       padding: 0;
       text-align: center;
       background-color: #4a4a4a;
@@ -34,14 +37,18 @@
     }
 
     .budget-container h2 {
-      color: #020403;
+      color: black;
       font-size: 1.8em;
       font-weight: 900;
     }
 
     .budget-container {
-      background-color: #cecece;
-      padding: 1em 0em;
+      /* background-color: #cecece; */
+      background-color: #9dc5c3;
+      background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+      background-color: #e3efe8;
+      background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+      padding: 1rem 0em;
       border-radius: 1.8em;
       margin: 8px 2px;
     }
@@ -187,6 +194,20 @@
 
     .list ul li button:hover {
       transform: scale(1.15);
+    }
+
+    @media(max-width:410px) {
+      .container {
+        padding: 0.8em 0;
+      }
+
+      .budget-container {
+        padding: 0.2em 0;
+
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
     }
   </style>
 </head>
